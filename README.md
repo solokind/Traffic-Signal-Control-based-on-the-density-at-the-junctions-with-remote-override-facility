@@ -1,0 +1,2 @@
+# Traffic-Signal-Control-based-on-the-density-at-the-junctions-with-remote-override-facility
+The system effectively minimized waiting times at traffic junctions by up to 40% compared to standard timing systems, optimizing traffic flow. Real-time density measurement and remote override capabilities demonstrated reliable operation under varying traffic conditions, confirming the system’s applicability in urban traffic management.
