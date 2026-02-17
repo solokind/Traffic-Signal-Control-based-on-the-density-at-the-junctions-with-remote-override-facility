@@ -1,0 +1,67 @@
+Purpose of the Simulation:
+The MATLAB code simulates how a PLC controls a nonlinear industrial process using a PID controller to achieve a desired setpoint automatically.
+
+Sampling and Time Setup:
+The process is simulated for 10 seconds with a sampling time of 0.01 seconds, meaning control actions are updated every 0.01 s.
+
+Nonlinear Process Modeling:
+The process output changes based on the equation
+y(i) = y(i-1) + T*(-k1*y(i-1) + k2*u(i)^2)
+showing that the system is nonlinear because of the square term (u²).
+
+Setpoint Definition:
+The setpoint is fixed at 5, meaning the system should maintain the output (like temperature, level, etc.) around 5 units.
+
+Controller Role:
+The PID controller continuously calculates the error = (setpoint - actual output) and adjusts the actuator signal to minimize it.
+
+Control Parameters:
+
+Kp = 2: Controls proportional response.
+
+Ki = 1: Reduces steady-state error.
+
+Kd = 0.5: Controls overshoot and improves stability.
+
+Integration and Derivative Terms:
+Integral accumulates the total error over time, while derivative predicts future error trends for smoother control.
+
+Actuator Output (u):
+The actuator output is limited between 0 and 10 volts, representing real PLC output constraints.
+
+Process Response (y):
+The output gradually increases and stabilizes near the setpoint, showing the control system’s ability to reach steady state.
+
+Sensor Response Plot (5.1.1):
+This graph shows blue curve = process output, red dashed line = setpoint.
+You can explain how the output starts low, rises smoothly, and then settles close to the setpoint.
+
+Setpoint vs Process Output (5.1.2):
+This plot shows the relationship between the desired value and achieved value — ideally, they align closely, proving controller accuracy.
+
+Actuator Response Plot (5.1.3):
+The actuator initially produces a strong control signal (green curve) to overcome error and then reduces once steady state is reached.
+
+Closed-Loop Feedback Plot (5.1.4):
+Combines process output, setpoint, and actuator output in one graph — useful to show how feedback stabilizes the system.
+
+Feedback Mechanism Explanation:
+Whenever output deviates from the setpoint, the controller automatically adjusts the actuator output to bring it back.
+
+System Stability:
+The smooth approach of the output towards the setpoint indicates a stable closed-loop control system without oscillations.
+
+Response Time (5.1.5):
+The calculated response time shows how quickly the system reaches 95% of its final value — displayed in MATLAB command window.
+
+Steady-State Error:
+MATLAB prints the difference between final output and setpoint, which should be very small, showing effective control.
+
+Error Plot (5.1.5 continued):
+The error vs time graph shows the difference reducing to near zero — a sign of accurate and efficient control action.
+
+Practical Relevance:
+This simulation mirrors how a PLC controls real nonlinear processes like pressure regulation, tank level control, or temperature control.
+
+Final Observation:
+The simulation validates that the designed PID-controlled PLC system can effectively handle nonlinearities and maintain desired performance.
